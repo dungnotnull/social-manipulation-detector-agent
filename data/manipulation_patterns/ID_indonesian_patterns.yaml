@@ -1,0 +1,50 @@
+version: "1.0.0"
+category: "ID"
+category_name: "Indonesian Language-Specific Patterns"
+language: "id"
+last_updated: "2026-06-08"
+patterns:
+  - name: ID_FOMO_PHRASES
+    type: keyword_list
+    description: "Common Indonesian FOMO manipulation phrases"
+    phrases:
+      - "Jangan sampai ketinggalan"
+      - "Kesempatan emas"
+      - "Tinggal beberapa slot lagi"
+      - "Mumpung masih murah"
+      - "Bakal naik gila-gilaan"
+      - "Ini koin bulan depan naik 1000%"
+      - "Whales lagi akumulasi diam-diam"
+      - "Masuk sekarang sebelum terlambat"
+
+  - name: ID_FUD_PHRASES
+    type: keyword_list
+    description: "Common Indonesian FUD manipulation phrases"
+    phrases:
+      - "Ini proyek scam"
+      - "Jual sekarang juga"
+      - "Hati-hati rug pull"
+      - "Udah mau collapse"
+      - "Tim dev kabur"
+      - "Lindungi modal kamu"
+      - "Keluar sebelum nyangkut"
+      - "Ini warning terakhir"
+
+  - name: ID_SHILL_PATTERNS
+    type: pattern_list
+    description: "Common Indonesian shill / promotion patterns"
+    patterns:
+      - "Gabung grup VIP aku" — Private group recruitment
+      - "DM buat link referral" — Referral link promotion
+      - "Aku udah x{múltiplier} dari koin ini" — Unverifiable profit claim
+      - "Jaminan cuan 100%" — Impossible guaranteed returns
+
+  - name: ID_BOT_INDICATORS
+    type: signal_list
+    description: "Signals that an Indonesian-language comment may be bot-generated"
+    signals:
+      - "Mixing formal 'Anda' with casual 'gue/lu' unnaturally"
+      - "No Jakarta-style abbreviations that would be natural"
+      - "Perfect Indonesian spelling without 'alay' shortcuts"
+      - "Overly formal sentence structure for casual social media"
+      - "No local slang from claimed regional origin"

@@ -1,0 +1,107 @@
+version: "1.0.0"
+category: "B"
+category_name: "Coordinated Inauthentic Behavior"
+last_updated: "2026-06-08"
+tactics:
+  - name: NARRATIVE_FLOODING
+    description: "Repeating same talking points with slight variations across accounts/comments to dominate conversation."
+    detection_difficulty: MEDIUM
+    false_positive_risk: MEDIUM
+    keywords: []
+    detection_signals:
+      - "Cosine similarity > 0.85 across 3+ comments from different accounts"
+      - "Same hashtags + same narrative framing within short window"
+    examples:
+      - "Multiple accounts posting variations of the same pro-crypto narrative within minutes"
+
+  - name: BANDWAGON_MANUFACTURING
+    description: "Creating illusion of consensus through coordinated bot posting to shift perceived majority opinion."
+    detection_difficulty: MEDIUM
+    false_positive_risk: MEDIUM
+    keywords: []
+    detection_signals:
+      - "Sudden surge of similar-opinion comments within 1h window"
+      - "All supportive accounts created within same timeframe"
+    examples:
+      - "10+ accounts commenting 'best project ever' on a thread within 30 minutes"
+
+  - name: ASTROTURFING
+    description: "Fake grassroots support — organic-seeming language with corporate/state coordination behind it."
+    detection_difficulty: HIGH
+    false_positive_risk: HIGH
+    keywords: []
+    detection_signals:
+      - "Suspiciously uniform enthusiasm across demographically distinct accounts"
+      - "Same talking points from accounts claiming different backgrounds/regions"
+      - "All accounts created around the same time"
+    examples:
+      - "Accounts claiming to be 'regular moms', 'college students', and 'retirees' all posting the same political talking points"
+
+  - name: HASHTAG_BOMBING
+    description: "Off-topic hashtag injection to hijack trending topics for manipulation campaigns."
+    detection_difficulty: LOW
+    false_positive_risk: LOW
+    keywords: []
+    detection_signals:
+      - "Hashtags unrelated to comment content"
+      - "Multiple hashtags from different manipulation campaigns in one post"
+    examples:
+      - "#CuteDog #MondayMotivation #Election2024 #BuySignal" (mixing unrelated with manipulation)
+
+  - name: REPLY_BRIGADING
+    description: "Coordinated replies to drown out opposing views or amplify a narrative."
+    detection_difficulty: MEDIUM
+    false_positive_risk: MEDIUM
+    keywords: []
+    detection_signals:
+      - "3+ accounts replying similar content to same target post within 60s"
+    examples:
+      - "Multiple accounts replying 'Wen moon?' to every critical post about a crypto project"
+
+  - name: CROSS_PLATFORM_SYNC
+    description: "Same narrative appearing on Twitter, Reddit, and Telegram within 2h — strong coordination signal."
+    detection_difficulty: MEDIUM
+    false_positive_risk: LOW
+    detection_signals:
+      - "Content similarity > 0.85 across platforms within 120 minutes"
+    examples:
+      - "Same FOMO narrative hits Twitter, Reddit, and Telegram trading groups simultaneously"
+
+  - name: CREATION_BURST
+    description: "Multiple accounts created within same 24-72h window, all posting in the same community."
+    detection_difficulty: LOW
+    false_positive_risk: LOW
+    detection_signals:
+      - "≥ 5 accounts created same day posting same narrative"
+    examples:
+      - "Cluster of accounts all created Nov 15, 2025 suddenly activate in crypto discussions"
+
+  - name: ENGAGEMENT_POD
+    description: "Private groups where members like/retweet each other on command to artificially inflate engagement."
+    detection_difficulty: HIGH
+    false_positive_risk: MEDIUM
+    keywords: []
+    detection_signals:
+      - "Same small set of accounts consistently like/retweet each other's content"
+      - "Engagement happens within seconds of posting"
+    examples:
+      - "Every post from account X gets 20+ likes within 30 seconds from same accounts"
+
+  - name: SLEEPER_ACCOUNT
+    description: "Aged accounts with legitimate history suddenly activated for manipulation campaigns."
+    detection_difficulty: HIGH
+    false_positive_risk: HIGH
+    detection_signals:
+      - "Account > 2 years old with normal history suddenly shifts to campaign content"
+      - "Sudden behavioral change: posts topic never posted before at 10x frequency"
+    examples:
+      - "2-year-old sports fan account suddenly begins posting political disinformation exclusively"
+
+  - name: QUOTE_TWEET_AMPLIFICATION
+    description: "Coordinated quote-tweeting of target content with added manipulation narrative."
+    detection_difficulty: MEDIUM
+    false_positive_risk: MEDIUM
+    detection_signals:
+      - "3+ accounts quote-tweeting same post with similar added narrative within minutes"
+    examples:
+      - "Multiple accounts quote-tweet a legitimate news article adding 'See? This proves we were right!'"

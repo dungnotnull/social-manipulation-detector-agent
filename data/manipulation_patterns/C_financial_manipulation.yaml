@@ -1,0 +1,117 @@
+version: "1.0.0"
+category: "C"
+category_name: "Financial Manipulation"
+last_updated: "2026-06-08"
+tactics:
+  - name: FOMO_PUMP
+    description: "Price prediction + urgency + social proof combo to create artificial buying pressure."
+    detection_difficulty: LOW
+    false_positive_risk: LOW
+    keywords:
+      - "to the moon"
+      - "100x"
+      - "10x"
+      - "about to explode"
+      - "whales are accumulating"
+      - "don't miss this coin"
+      - "next bitcoin"
+      - "lambo soon"
+    detection_signals:
+      - "Specific price target + timeframe + urgency"
+      - "FinBERT positive sentiment > 0.8"
+      - "Asset name present + referral link"
+    examples:
+      - "🚀🚀 This token is about to EXPLODE! Whales are accumulating RIGHT NOW! Don't be the last one holding fiat when this 10x's by Friday!"
+      - "Bitcoin to $200k by EOY! Institutions accumulating quietly. Last chance!"
+
+  - name: FUD_DUMP
+    description: "Fear amplification to trigger panic selling — coordinated negative narrative."
+    detection_difficulty: MEDIUM
+    false_positive_risk: MEDIUM
+    keywords:
+      - "crash"
+      - "sell now"
+      - "exit scam"
+      - "rug pull"
+      - "protect your capital"
+      - "get out while you can"
+      - "massive selloff"
+    detection_signals:
+      - "Fear claim + unverifiable source + sell call to action"
+      - "Multiple accounts posting similar FUD within short window"
+      - "Often appears before/after large sell orders"
+    examples:
+      - "SEC is about to announce charges. Insider sources say this. Protect your capital NOW."
+      - "Dev team is dumping bags. Get out while you still can!"
+
+  - name: SHILL_PATTERN
+    description: "Unprompted promotion, referral links, fake testimonials."
+    detection_difficulty: LOW
+    false_positive_risk: LOW
+    keywords:
+      - "dm me"
+      - "join my group"
+      - "use my code"
+      - "referral link"
+      - "i turned"
+      - "sign up with my link"
+    sub_types:
+      - "direct_shill": "Asset name + price target + referral link"
+      - "stealth_shill": "Organic-seeming story ending in asset promotion"
+      - "fud_competitor": "Negative content on competitor to drive to own pick"
+      - "volume_shill": "Same promotion repeated across 20+ accounts"
+    examples:
+      - "I turned $1,000 into $45,000 in 3 weeks. DM me for my strategy!"
+      - "Just paid my mortgage thanks to this project. Use my referral for 10% bonus!"
+
+  - name: WHALE_NARRATIVE
+    description: "Unverifiable claims about whale/institutional accumulation to drive FOMO."
+    detection_difficulty: MEDIUM
+    false_positive_risk: MEDIUM
+    keywords:
+      - "whales are buying"
+      - "institutional money"
+      - "smart money"
+      - "insider buying"
+      - "big players"
+      - "wall street is"
+    detection_signals:
+      - "Unverifiable claim of large-entity action"
+      - "No source or link to on-chain data"
+      - "Often combined with urgency"
+    examples:
+      - "Whales are accumulating this coin right now! On-chain data doesn't lie."
+      - "Smart money is quietly positioning. When they're done, price will explode."
+
+  - name: PRE_LISTING_HYPE
+    description: "Artificial hype before a token listing or exchange announcement."
+    detection_difficulty: MEDIUM
+    false_positive_risk: MEDIUM
+    keywords:
+      - "before listing"
+      - "exchange announcement"
+      - "tier 1 exchange"
+      - "binance listing"
+      - "coinbase listing"
+    detection_signals:
+      - "Unverified exchange listing claims"
+      - "Price target based on hypothetical listing"
+      - "Coordinated hype before actual announcement"
+    examples:
+      - "This coin will be on Binance next week! 50x minimum after listing!"
+
+  - name: PONZI_FRAMING
+    description: "Promise of guaranteed returns, passive income schemes, referral-based rewards."
+    detection_difficulty: LOW
+    false_positive_risk: LOW
+    keywords:
+      - "guaranteed returns"
+      - "passive income"
+      - "daily rewards"
+      - "compounding interest"
+      - "earn while you sleep"
+    detection_signals:
+      - "Promise of guaranteed returns (impossible in markets)"
+      - "Referral-based reward structure"
+    examples:
+      - "Earn 2% daily! Guaranteed returns! Compound your way to financial freedom!"

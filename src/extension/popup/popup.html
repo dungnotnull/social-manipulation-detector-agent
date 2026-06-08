@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Social Manipulation Detector</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup-container">
+    <header class="popup-header">
+      <h1>🛡️ SMDA</h1>
+      <span class="version">v0.1.0</span>
+    </header>
+
+    <section class="stats-section">
+      <h2>Active Campaigns</h2>
+      <div id="campaign-list" class="campaign-list">
+        <p class="loading">Loading...</p>
+      </div>
+    </section>
+
+    <section class="settings-section">
+      <h2>Settings</h2>
+      <div class="setting-row">
+        <label for="sensitivity">Sensitivity threshold:</label>
+        <select id="sensitivity">
+          <option value="0.85">High (only flag certainty)</option>
+          <option value="0.65" selected>Standard (balanced)</option>
+          <option value="0.40">Low (flag more)</option>
+        </select>
+      </div>
+      <div class="setting-row">
+        <label>
+          <input type="checkbox" id="show-clean" />
+          Show CLEAN indicator
+        </label>
+      </div>
+    </section>
+
+    <section class="platforms-section">
+      <h2>Enabled Platforms</h2>
+      <div class="platform-toggles">
+        <label><input type="checkbox" id="platform-twitter" checked /> Twitter/X</label>
+        <label><input type="checkbox" id="platform-reddit" checked /> Reddit</label>
+        <label><input type="checkbox" id="platform-youtube" checked /> YouTube</label>
+        <label><input type="checkbox" id="platform-facebook" /> Facebook</label>
+      </div>
+    </section>
+
+    <footer class="popup-footer">
+      <button id="refresh-btn">↻ Refresh</button>
+    </footer>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

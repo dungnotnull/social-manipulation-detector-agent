@@ -1,0 +1,133 @@
+{
+  "language": "id",
+  "version": "1.0.0",
+  "description": "Indonesian few-shot examples for manipulation detection",
+  "examples": [
+    {
+      "category": "C",
+      "tactic": "FOMO_PUMP",
+      "text": "🚀🚀 Koin ini akan MELEDAK! Para whales sedang akumulasi DIAM-DIAM! Jangan jadi yang terakhir pegang fiat saat ini 10x hari Jumat!",
+      "manipulation_index": 0.93,
+      "confidence": "HIGH",
+      "evidence_spans": [
+        {"tactic": "FOMO_PUMP", "span": "akan MELEDAK", "explanation": "Prediksi harga + urgensi"},
+        {"tactic": "SOCIAL_PROOF", "span": "whales sedang akumulasi", "explanation": "Klaim otoritas palsu"},
+        {"tactic": "URGENCY_SCARCITY", "span": "Jangan jadi yang terakhir", "explanation": "Pemicu FOMO eksplisit"}
+      ],
+      "is_ai_generated": false,
+      "is_coordinated": false
+    },
+    {
+      "category": "C",
+      "tactic": "FOMO_PUMP",
+      "text": "Bitcoin ke 2 miliar akhir tahun! Institusi sedang akumulasi diam-diam. Kesempatan terakhir masuk sebelum pump! 🚀",
+      "manipulation_index": 0.82,
+      "confidence": "HIGH",
+      "evidence_spans": [
+        {"tactic": "FOMO_PUMP", "span": "Bitcoin ke 2 miliar akhir tahun", "explanation": "Target harga spesifik + timeframe"},
+        {"tactic": "SOCIAL_PROOF", "span": "Institusi sedang akumulasi diam-diam", "explanation": "Klaim institusi tidak terverifikasi"},
+        {"tactic": "URGENCY_SCARCITY", "span": "Kesempatan terakhir", "explanation": "Pemicu urgensi"}
+      ],
+      "is_ai_generated": false,
+      "is_coordinated": false
+    },
+    {
+      "category": "C",
+      "tactic": "SHILL_PATTERN",
+      "text": "Baru nemu gem ini 💎 tinggal join grup VIP aku, udah x5 minggu ini! DM aja buat link referral!",
+      "manipulation_index": 0.85,
+      "confidence": "HIGH",
+      "evidence_spans": [
+        {"tactic": "SHILL_PATTERN", "span": "join grup VIP aku", "explanation": "Undangan grup privat"},
+        {"tactic": "SHILL_PATTERN", "span": "link referral", "explanation": "Skema referral eksplisit"},
+        {"tactic": "AUTHORITY_FABRICATION", "span": "udah x5 minggu ini", "explanation": "Klaim tidak terverifikasi"}
+      ],
+      "is_ai_generated": false,
+      "is_coordinated": false
+    },
+    {
+      "category": "A",
+      "tactic": "SOCIAL_PROOF",
+      "text": "Semua orang sudah pindah ke platform ini. 100 ribu orang gabung minggu ini. Kamu ketinggalan kalau masih pakai yang lama.",
+      "manipulation_index": 0.78,
+      "confidence": "HIGH",
+      "evidence_spans": [
+        {"tactic": "SOCIAL_PROOF", "span": "Semua orang sudah pindah", "explanation": "Klaim konsensus palsu"},
+        {"tactic": "SOCIAL_PROOF", "span": "100 ribu orang gabung", "explanation": "Statistik tidak terverifikasi"},
+        {"tactic": "URGENCY_SCARCITY", "span": "Kamu ketinggalan", "explanation": "Pemicu FOMO"}
+      ],
+      "is_ai_generated": false,
+      "is_coordinated": false
+    },
+    {
+      "category": "D",
+      "tactic": "EMOTIONAL_HIJACKING",
+      "text": "NGGAK BISA PERCAYA! Mereka menghancurkan semua yang kita pedulikan! BAGIKAN INI sebelum dihapus!",
+      "manipulation_index": 0.82,
+      "confidence": "HIGH",
+      "evidence_spans": [
+        {"tactic": "EMOTIONAL_HIJACKING", "span": "NGGAK BISA PERCAYA! Mereka menghancurkan", "explanation": "Bahasa emosional ekstrem"},
+        {"tactic": "URGENCY_SCARCITY", "span": "sebelum dihapus", "explanation": "Urgensi palsu untuk sharing"}
+      ],
+      "is_ai_generated": false,
+      "is_coordinated": false
+    },
+    {
+      "category": null,
+      "tactic": null,
+      "text": "Saya baru beli ETH pertama kali. Semangat belajar tentang dunia crypto!",
+      "manipulation_index": 0.08,
+      "confidence": "HIGH",
+      "evidence_spans": [],
+      "is_ai_generated": false,
+      "is_coordinated": false
+    },
+    {
+      "category": null,
+      "tactic": null,
+      "text": "Menurut saya kebijakan ini tidak efektif karena sejarah menunjukkan hasil yang berbeda.",
+      "manipulation_index": 0.04,
+      "confidence": "HIGH",
+      "evidence_spans": [],
+      "is_ai_generated": false,
+      "is_coordinated": false
+    },
+    {
+      "category": "C",
+      "tactic": "FUD_DUMP",
+      "text": "Proyek ini scam! Tim developer udah kabur dengan dana investor. Jual sekarang sebelum terlambat!",
+      "manipulation_index": 0.88,
+      "confidence": "HIGH",
+      "evidence_spans": [
+        {"tactic": "FUD_DUMP", "span": "Proyek ini scam!", "explanation": "Klaim ketakutan tanpa bukti"},
+        {"tactic": "FUD_DUMP", "span": "Jual sekarang", "explanation": "Panggilan aksi jual eksplisit"},
+        {"tactic": "URGENCY_SCARCITY", "span": "sebelum terlambat", "explanation": "Tekanan urgensi untuk menjual"}
+      ],
+      "is_ai_generated": false,
+      "is_coordinated": false
+    },
+    {
+      "category": "A",
+      "tactic": "URGENCY_SCARCITY",
+      "text": "⚠️ TINGGAL 3 JAM! Presale tutup tengah malam. Jangan sampai ketinggalan kesempatan terbesar tahun 2026!",
+      "manipulation_index": 0.75,
+      "confidence": "HIGH",
+      "evidence_spans": [
+        {"tactic": "URGENCY_SCARCITY", "span": "TINGGAL 3 JAM", "explanation": "Tekanan countdown buatan"},
+        {"tactic": "URGENCY_SCARCITY", "span": "Jangan sampai ketinggalan", "explanation": "Pemicu FOMO berbasis kelangkaan"}
+      ],
+      "is_ai_generated": false,
+      "is_coordinated": false
+    },
+    {
+      "category": null,
+      "tactic": null,
+      "text": "waduh koin ini udah turun 💀 kasian yang beli di puncak kemarin wkwk",
+      "manipulation_index": 0.15,
+      "confidence": "MEDIUM",
+      "evidence_spans": [],
+      "is_ai_generated": false,
+      "is_coordinated": false
+    }
+  ]
+}

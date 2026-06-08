@@ -1,0 +1,119 @@
+version: "1.0.0"
+category: "D"
+category_name: "Disinformation"
+last_updated: "2026-06-08"
+tactics:
+  - name: EMOTIONAL_HIJACKING
+    description: "Extreme emotional language (outrage, fear, hope) to bypass critical thinking and analytical processing."
+    detection_difficulty: MEDIUM
+    false_positive_risk: MEDIUM
+    keywords:
+      - "outrageous"
+      - "unbelievable"
+      - "shocking"
+      - "you won't believe"
+      - "this changes everything"
+      - "they're destroying"
+      - "wake up sheeple"
+      - "open your eyes"
+    examples:
+      - "This is OUTRAGEOUS! They're literally destroying everything we care about!"
+      - "WAKE UP! They're lying to you about EVERYTHING!"
+
+  - name: FALSE_DILEMMA
+    description: "Forced binary choice — presents only two options when many exist, usually to force a specific conclusion."
+    detection_difficulty: LOW
+    false_positive_risk: LOW
+    keywords:
+      - "either you"
+      - "anyone who disagrees"
+      - "you're either with us"
+      - "if you're not"
+      - "there are only two"
+      - "there's no middle ground"
+    examples:
+      - "Either you support this or you're complicit."
+      - "Anyone who disagrees is a paid shill."
+
+  - name: FIREHOSE_FALSEHOOD
+    description: "Multiple false or misleading claims made simultaneously — too many to fact-check in real time. Each individual claim is deniable."
+    detection_difficulty: HIGH
+    false_positive_risk: HIGH
+    keywords: []
+    detection_signals:
+      - "≥ 4 distinct factual claims in single comment"
+      - "Claims span multiple domains (health + politics + science)"
+      - "Claims are each independently verifiable but overwhelming in aggregate"
+    examples:
+      - "They stole the election, created the virus, control the media, suppressed the cure, and are covering it all up!"
+
+  - name: CONTEXT_REMOVAL
+    description: "Real quote, statistic, or event stripped of necessary context to mislead readers toward false conclusion."
+    detection_difficulty: HIGH
+    false_positive_risk: HIGH
+    keywords: []
+    detection_signals:
+      - "Quote presented without source or date"
+      - "Statistic without methodology or sample size"
+      - "Event described without preceding/following context"
+    examples:
+      - "The CEO literally said 'this project is dead'" (missing: "...if we don't innovate")
+
+  - name: FAKE_EQUIVALENCE
+    description: "Presenting two incomparable things as equivalent to legitimize one or delegitimize the other."
+    detection_difficulty: MEDIUM
+    false_positive_risk: MEDIUM
+    keywords:
+      - "just like"
+      - "same as"
+      - "no different from"
+      - "equally bad"
+    examples:
+      - "Saying the earth is round is just like saying it's flat — who really knows?"
+
+  - name: WHATABOUTISM
+    description: "Deflecting criticism by pointing to unrelated wrongdoing by others without addressing the original issue."
+    detection_difficulty: MEDIUM
+    false_positive_risk: MEDIUM
+    keywords:
+      - "what about"
+      - "but what about"
+      - "why aren't you talking about"
+    examples:
+      - "What about when YOUR side did X? Why aren't you talking about THAT?"
+
+  - name: CHERRY_PICKING
+    description: "Selectively presenting only data that supports a position while ignoring contradictory evidence."
+    detection_difficulty: HIGH
+    false_positive_risk: HIGH
+    keywords: []
+    detection_signals:
+      - "Single data point presented as trend"
+      - "Out-of-context statistic that contradicts broader consensus"
+    examples:
+      - "The market went up today, so clearly this strategy works!" (ignoring 90% loss over 6 months)
+
+  - name: GISH_GALLOP
+    description: "Overwhelming opponent with many weak arguments rapidly — impossible to address all in limited time."
+    detection_difficulty: HIGH
+    false_positive_risk: HIGH
+    keywords: []
+    detection_signals:
+      - "≥ 6 distinct arguments in a single short comment"
+      - "Arguments span unrelated topics"
+      - "Each claim is superficially plausible but factually weak"
+    examples:
+      - "And the pyramids prove alien contact, and NASA lies, and chemtrails, and the moon landing..."
+
+  - name: SOWING_DISCORD
+    description: "Amplifying societal divisions and conflict rather than advocating for any specific position."
+    detection_difficulty: MEDIUM
+    false_positive_risk: MEDIUM
+    keywords:
+      - "they hate you"
+      - "they want to destroy"
+      - "can't trust either"
+      - "both sides are"
+      - "it's all rigged"
+    examples:
+      - "They all hate you! The system is rigged against regular people!"

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SMDA — Manipulation Campaign Dashboard</title>
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box }
+    body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; background:#f8fafc; color:#1e293b; min-height:100vh }
+    .container { max-width:1200px; margin:0 auto; padding:24px }
+    header { background:#1e3a5f; color:#fff; padding:20px 24px; border-radius:12px; margin-bottom:24px; display:flex; justify-content:space-between; align-items:center }
+    header h1 { font-size:24px; font-weight:700 }
+    .stats-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px; margin-bottom:24px }
+    .stat-card { background:#fff; padding:20px; border-radius:10px; border:1px solid #e2e8f0; box-shadow:0 1px 3px rgba(0,0,0,.06) }
+    .stat-card .label { font-size:12px; color:#64748b; text-transform:uppercase; letter-spacing:.5px; margin-bottom:6px }
+    .stat-card .value { font-size:32px; font-weight:700; color:#0f172a }
+    .stat-card .sub { font-size:13px; color:#64748b; margin-top:4px }
+    .campaign-card { background:#fff; padding:16px 20px; border-radius:10px; border:1px solid #e2e8f0; margin-bottom:12px; box-shadow:0 1px 3px rgba(0,0,0,.06) }
+    .campaign-card .campaign-name { font-size:16px; font-weight:600; margin-bottom:6px }
+    .campaign-card .campaign-meta { display:flex; gap:12px; flex-wrap:wrap; font-size:13px; color:#64748b }
+    .tag { padding:2px 8px; border-radius:4px; font-size:11px; font-weight:600 }
+    .tag-red { background:#fee2e2; color:#991b1b }
+    .tag-orange { background:#ffedd5; color:#9a3412 }
+    .tag-blue { background:#dbeafe; color:#1e40af }
+    .tag-green { background:#dcfce7; color:#166534 }
+    .level-bar { height:6px; border-radius:3px; margin-bottom:12px; background:#e2e8f0; overflow:hidden }
+    .level-bar-fill { height:100%; border-radius:3px; transition:width .3s }
+    .level-distribution { display:flex; gap:8px; margin:12px 0 }
+    .level-item { flex:1; text-align:center; padding:8px; border-radius:6px; font-size:12px }
+    .level-high { background:#fee2e2; color:#991b1b }
+    .level-elevated { background:#ffedd5; color:#9a3412 }
+    .level-moderate { background:#fef9c3; color:#854d0e }
+    .level-low { background:#dbeafe; color:#1e40af }
+    .level-clean { background:#dcfce7; color:#166534 }
+    .section-title { font-size:18px; font-weight:600; margin-bottom:16px; color:#0f172a }
+    .loading { text-align:center; padding:40px; color:#94a3b8 }
+    .error { background:#fee2e2; color:#991b1b; padding:12px 16px; border-radius:8px; margin-bottom:16px }
+    .refresh-btn { background:#1e3a5f; color:#fff; border:none; padding:8px 16px; border-radius:6px; cursor:pointer; font-size:13px }
+    .refresh-btn:hover { background:#1e4a7a }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div>
+        <h1>🛡️ Social Manipulation Detector</h1>
+        <p style="opacity:0.8;margin-top:4px;font-size:13px">AI-powered manipulation campaign monitoring</p>
+      </div>
+      <button class="refresh-btn" onclick="loadAll()">↻ Refresh</button>
+    </header>
+    <div id="error" class="error" style="display:none"></div>
+    <div class="stats-grid" id="stats"></div>
+    <div class="section-title">Active Manipulation Campaigns</div>
+    <div id="campaigns"><p class="loading">Loading campaigns...</p></div>
+    <div class="section-title" style="margin-top:24px">Score Distribution</div>
+    <div class="level-distribution" id="distribution"></div>
+  </div>
+  <script>
+    const API = 'http://localhost:8000';
+    async function loadAll() {
+      document.getElementById('error').style.display = 'none';
+      await Promise.all([loadStats(), loadCampaigns()]);
+    }
+    async function loadStats() {
+      try {
+        const res = await fetch(`${API}/campaigns/stats/platform/twitter`);
+        const data = await res.json();
+        const total = data.total_scanned || 0;
+        const rate = ((data.manipulation_rate || 0) * 100).toFixed(1);
+        const campaigns = data.active_campaigns || 0;
+        document.getElementById('stats').innerHTML = `
+          <div class="stat-card"><div class="label">Comments Scanned</div><div class="value">${total.toLocaleString()}</div></div>
+          <div class="stat-card"><div class="label">Manipulation Rate</div><div class="value">${rate}%</div></div>
+          <div class="stat-card"><div class="label">Active Campaigns</div><div class="value">${campaigns}</div></div>
+          <div class="stat-card"><div class="label">High Risk</div><div class="value" style="color:#991b1b">${(data.by_level||{}).HIGH||0}</div></div>
+        `;
+        const dist = data.by_level || {};
+        document.getElementById('distribution').innerHTML = `
+          <div class="level-item level-high">🔴 HIGH<br>${dist.HIGH||0}</div>
+          <div class="level-item level-elevated">🟠 ELEVATED<br>${dist.ELEVATED||0}</div>
+          <div class="level-item level-moderate">🟡 MODERATE<br>${dist.MODERATE||0}</div>
+          <div class="level-item level-low">🔵 LOW<br>${dist.LOW||0}</div>
+          <div class="level-item level-clean">✅ CLEAN<br>${dist.CLEAN||0}</div>
+        `;
+      } catch(e) {
+        document.getElementById('stats').innerHTML = '<div class="stat-card"><div class="label">Status</div><div class="value" style="font-size:18px;color:#94a3b8">API offline</div></div>';
+      }
+    }
+    async function loadCampaigns() {
+      try {
+        const res = await fetch(`${API}/campaigns/active`);
+        const campaigns = await res.json();
+        if (!campaigns.length) {
+          document.getElementById('campaigns').innerHTML = '<p style="color:#94a3b8;padding:20px;text-align:center">No active manipulation campaigns detected ✅</p>';
+          return;
+        }
+        document.getElementById('campaigns').innerHTML = campaigns.map(c => `
+          <div class="campaign-card">
+            <div class="campaign-name">${esc(c.name)}</div>
+            <div class="campaign-meta">
+              <span class="tag tag-blue">${esc(c.platform)}</span>
+              <span>${c.account_count||0} accounts</span>
+              <span>${c.comment_count||0} comments</span>
+              <span class="tag tag-orange">${esc(c.tactic_category||'Unknown')}</span>
+              <span style="color:#94a3b8">First seen: ${c.first_seen_at ? new Date(c.first_seen_at).toLocaleDateString() : 'N/A'}</span>
+            </div>
+          </div>
+        `).join('');
+      } catch(e) {
+        document.getElementById('campaigns').innerHTML = '<p style="color:#94a3b8;padding:20px;text-align:center">Cannot reach API</p>';
+      }
+    }
+    function esc(s) { const d=document.createElement('div');d.textContent=s;return d.innerHTML }
+    loadAll();
+  </script>
+</body>
+</html>

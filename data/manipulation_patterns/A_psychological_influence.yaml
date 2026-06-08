@@ -1,0 +1,136 @@
+version: "1.0.0"
+category: "A"
+category_name: "Psychological Influence"
+last_updated: "2026-06-08"
+tactics:
+  - name: SOCIAL_PROOF
+    description: "Manufactured consensus — 'Everyone is doing this', fake testimonials, bot-driven likes/upvotes to simulate popularity."
+    detection_difficulty: MEDIUM
+    false_positive_risk: MEDIUM
+    keywords:
+      - "everyone is"
+      - "thousands have"
+      - "the community agrees"
+      - "people are saying"
+      - "everyone knows"
+      - "100k people"
+      - "join the movement"
+    examples:
+      - "Everyone is switching to this platform. 100k people joined just this week."
+      - "The community agrees this is the best investment of 2024."
+      - "People are saying this is the next big thing."
+
+  - name: URGENCY_SCARCITY
+    description: "Artificial time pressure — countdowns, limited-time offers, FOMO triggers to short-circuit deliberation."
+    detection_difficulty: LOW
+    false_positive_risk: LOW
+    keywords:
+      - "only today"
+      - "last chance"
+      - "act now"
+      - "before it's too late"
+      - "don't miss out"
+      - "limited time"
+      - "closing soon"
+      - "while supplies last"
+    examples:
+      - "Only 2 hours left to get in at this price!"
+      - "Last chance before the big announcement!"
+      - "Don't miss out on this once-in-a-lifetime opportunity!"
+
+  - name: AUTHORITY_FABRICATION
+    description: "Fake expert citations, manufactured credentials, unverifiable insider claims, invented statistics."
+    detection_difficulty: HIGH
+    false_positive_risk: HIGH
+    keywords:
+      - "according to research"
+      - "experts agree"
+      - "insider info"
+      - "scientists say"
+      - "studies show"
+      - "leading experts"
+    examples:
+      - "According to research from top scientists, this technology is revolutionary."
+      - "Experts agree this is the safest investment right now."
+
+  - name: RECIPROCITY_TRAP
+    description: "Creating obligation — 'I shared this with you, now you must share with others.'"
+    detection_difficulty: HIGH
+    false_positive_risk: HIGH
+    keywords:
+      - "i shared this"
+      - "after all i've done"
+      - "you owe it to"
+      - "share this if"
+      - "pass it on"
+    examples:
+      - "I shared this secret with you, now you must share with 5 friends!"
+      - "After all I've helped you with, the least you can do is..."
+
+  - name: LIKING_FLATTERY
+    description: "Excessive agreement + flattery before persuasion attempt."
+    detection_difficulty: MEDIUM
+    false_positive_risk: HIGH
+    keywords:
+      - "you seem smart"
+      - "as a fellow"
+      - "you're clearly intelligent"
+      - "i can tell you're"
+      - "someone as savvy as you"
+    examples:
+      - "You seem smart enough to see the truth about this."
+      - "As a fellow investor, you know this is the right move."
+
+  - name: COMMITMENT_ESCALATION
+    description: "Small ask → bigger ask across comment chain. Requires thread-level analysis."
+    detection_difficulty: HIGH
+    false_positive_risk: HIGH
+    keywords: []
+    examples:
+      - "You agreed X is bad, so surely Y is also a problem. And if Y is a problem, then Z..."
+
+  - name: EMOTIONAL_HIJACKING
+    description: "Extreme emotional language (outrage, fear, hope) to bypass critical thinking."
+    detection_difficulty: MEDIUM
+    false_positive_risk: MEDIUM
+    keywords:
+      - "outrageous"
+      - "unbelievable"
+      - "shocking"
+      - "you won't believe"
+      - "this changes everything"
+      - "they're destroying"
+      - "wake up"
+    examples:
+      - "This is OUTRAGEOUS! They're literally destroying everything!"
+      - "You won't BELIEVE what they're hiding from you!"
+
+  - name: FALSE_DILEMMA
+    description: "Forced binary choice — 'Either you X or you're a [enemy]'. Eliminates nuance."
+    detection_difficulty: LOW
+    false_positive_risk: LOW
+    keywords:
+      - "either you"
+      - "anyone who disagrees"
+      - "you're either with us"
+      - "if you're not"
+      - "there are only two"
+    examples:
+      - "Either you support this or you're complicit in the destruction."
+      - "Anyone who disagrees is a paid shill."
+
+  - name: FIREHOSE_FALSEHOOD
+    description: "Multiple false claims at once — too many to fact-check in real time."
+    detection_difficulty: HIGH
+    false_positive_risk: HIGH
+    keywords: []
+    examples:
+      - "They rigged the election, control the media, stole the funds, and are covering it all up!"
+
+  - name: CONTEXT_REMOVAL
+    description: "Real quote/statistic stripped of context to mislead."
+    detection_difficulty: HIGH
+    false_positive_risk: HIGH
+    keywords: []
+    examples:
+      - "The CEO literally said 'this project is dead' — sell now!" (missing: '...if we don't innovate')

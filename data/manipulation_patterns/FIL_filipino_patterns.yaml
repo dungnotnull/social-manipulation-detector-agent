@@ -1,0 +1,47 @@
+version: "1.0.0"
+category: "FIL"
+category_name: "Filipino Language-Specific Patterns"
+language: "fil"
+last_updated: "2026-06-08"
+patterns:
+  - name: FIL_FOMO_PHRASES
+    type: keyword_list
+    description: "Common Filipino FOMO manipulation phrases"
+    phrases:
+      - "Huwag palampasin"
+      - "Gintong pagkakataon"
+      - "Konti na lang ang slots"
+      - "Paputok na to"
+      - "Pumasok na habang mura pa"
+      - "Nagiipon ang mga whales"
+      - "Siguradong 10x to"
+      - "Sali na bago mahuli"
+
+  - name: FIL_FUD_PHRASES
+    type: keyword_list
+    description: "Common Filipino FUD manipulation phrases"
+    phrases:
+      - "Scam ang project na to"
+      - "Ibenta mo na"
+      - "Lalabas na ang balita"
+      - "Mawawalan ka ng pera"
+      - "Protektahan ang capital"
+      - "Lumayas ka na dyan"
+
+  - name: FIL_SHILL_PATTERNS
+    type: pattern_list
+    description: "Common Filipino shill patterns"
+    patterns:
+      - "PM mo ko para sa link" — DM for referral link
+      - "Sali ka sa VIP group" — VIP group recruitment
+      - "Kumita ako ng x{number}" — Unverifiable profit claim
+      - "100% sure na kikita" — Guaranteed returns (impossible)
+
+  - name: FIL_BOT_INDICATORS
+    type: signal_list
+    description: "Signals that a Filipino-language comment may be bot-generated"
+    signals:
+      - "No Taglish (Tagalog-English code-switching) which is near-universal in Filipino social media"
+      - "Absence of common abbreviations (d2, dyan, nman, kse, sana ol)"
+      - "Perfect formal grammar without SMS/text shortcuts"
+      - "No regional expressions specific to claimed location (Bisaya, Ilocano, etc.)"

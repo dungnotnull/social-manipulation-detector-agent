@@ -1,0 +1,84 @@
+{
+  "manifest_version": 3,
+  "name": "Social Manipulation Detector",
+  "version": "0.1.0",
+  "description": "AI-powered psychological manipulation & fake news shield for social platforms",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting",
+    "alarms"
+  ],
+  "host_permissions": [
+    "https://twitter.com/*",
+    "https://x.com/*",
+    "https://www.reddit.com/*",
+    "https://www.youtube.com/*",
+    "https://www.facebook.com/*",
+    "https://web.telegram.org/*",
+    "https://discord.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://twitter.com/*",
+        "https://x.com/*"
+      ],
+      "js": ["content.js", "injectors/twitter.js"],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": [
+        "https://www.reddit.com/*"
+      ],
+      "js": ["content.js", "injectors/reddit.js"],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": [
+        "https://www.youtube.com/*"
+      ],
+      "js": ["content.js", "injectors/youtube.js"],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": [
+        "https://www.facebook.com/*"
+      ],
+      "js": ["content.js", "injectors/facebook.js"],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": [
+        "https://web.telegram.org/*"
+      ],
+      "js": ["content.js", "injectors/telegram.js"],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": [
+        "https://discord.com/*"
+      ],
+      "js": ["content.js", "injectors/discord.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "social-manipulation-detector@smda.dev",
+      "strict_min_version": "115.0"
+    }
+  },
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "Social Manipulation Detector"
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

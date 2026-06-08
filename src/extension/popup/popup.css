@@ -1,0 +1,141 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 360px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 13px;
+  color: #1f2937;
+  background: #f9fafb;
+}
+
+.popup-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.popup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background: #1e3a5f;
+  color: white;
+}
+
+.popup-header h1 {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.version {
+  font-size: 11px;
+  opacity: 0.7;
+}
+
+section {
+  padding: 12px 16px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+section h2 {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #6b7280;
+  margin-bottom: 8px;
+}
+
+.campaign-list .loading,
+.campaign-list .empty,
+.campaign-list .error {
+  color: #9ca3af;
+  font-style: italic;
+  padding: 8px 0;
+}
+
+.campaign-list .error {
+  color: #dc2626;
+}
+
+.campaign-item {
+  padding: 8px;
+  margin-bottom: 6px;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+}
+
+.campaign-name {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.campaign-meta {
+  display: flex;
+  gap: 8px;
+  font-size: 11px;
+  color: #6b7280;
+}
+
+.platform-tag {
+  background: #dbeafe;
+  color: #1e40af;
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.setting-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.setting-row select {
+  padding: 4px 8px;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  font-size: 12px;
+  background: white;
+}
+
+.platform-toggles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.platform-toggles label {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.popup-footer {
+  padding: 12px 16px;
+  display: flex;
+  justify-content: center;
+}
+
+#refresh-btn {
+  padding: 6px 16px;
+  background: #1e3a5f;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+#refresh-btn:hover {
+  background: #1e4a7a;
+}

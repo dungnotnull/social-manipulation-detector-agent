@@ -1,0 +1,50 @@
+version: "1.0.0"
+category: "VI"
+category_name: "Vietnamese Language-Specific Patterns"
+language: "vi"
+last_updated: "2026-06-08"
+patterns:
+  - name: VI_FOMO_PHRASES
+    type: keyword_list
+    description: "Common Vietnamese FOMO (Fear Of Missing Out) manipulation phrases"
+    phrases:
+      - "Đừng bỏ lỡ cơ hội"
+      - "Cơ hội ngàn vàng"
+      - "Chỉ còn vài suất cuối"
+      - "Đang tăng mạnh"
+      - "Vào ngay hôm nay"
+      - "Sắp bay rồi"
+      - "Cá voi đang gom"
+      - "Chưa bao giờ có cơ hội tốt như vậy"
+
+  - name: VI_FUD_PHRASES
+    type: keyword_list
+    description: "Common Vietnamese FUD (Fear, Uncertainty, Doubt) manipulation phrases"
+    phrases:
+      - "Sắp sập rồi"
+      - "Cảnh báo khẩn"
+      - "Rút tiền ngay"
+      - "Đừng để mất trắng"
+      - "Bảo vệ tài sản ngay"
+      - "Thoát hàng gấp"
+      - "Scam dự án"
+      - "Team dev đã rút"
+
+  - name: VI_SHILL_PATTERNS
+    type: pattern_list
+    description: "Common Vietnamese shill / promotion patterns"
+    patterns:
+      - "Mình vừa x{múltiplier} tài khoản" — Personal profit claim (unverifiable)
+      - "Nhóm VIP đang tích lũy âm thầm" — Exclusive group FOMO trigger
+      - "Inbox mình gửi link" — Private channel promotion
+      - "Anh em vào nhóm Telegram" — External group recruitment
+
+  - name: VI_BOT_INDICATORS
+    type: signal_list
+    description: "Signals that a Vietnamese-language comment may be bot-generated"
+    signals:
+      - "Overly formal Kinh Bắc + Southern dialect mixing"
+      - "No regional slang that would be natural for claimed location"
+      - "Perfect Vietnamese spelling without mobile typing shortcuts"
+      - "Excessive use of 'bạn ơi', 'các bạn ơi' in non-community contexts"
+      - "Consistent full sentences (real Vietnamese mobile comments use shortcuts)"

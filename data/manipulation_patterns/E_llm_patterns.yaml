@@ -1,0 +1,114 @@
+version: "1.0.0"
+category: "E"
+category_name: "LLM-Characteristic Patterns"
+last_updated: "2026-06-08"
+tactics:
+  - name: LLM_HOLLOW_AFFIRMATION
+    description: "Excessive agreement without substance — a signature of RLHF-trained conversational models."
+    detection_difficulty: LOW
+    false_positive_risk: MEDIUM
+    keywords:
+      - "absolutely"
+      - "great point"
+      - "you're so right"
+      - "certainly"
+      - "great question"
+      - "that's a valid point"
+      - "i completely agree"
+    model_association: universal
+    examples:
+      - "Absolutely! You've raised such an important point!"
+
+  - name: LLM_OVER_HEDGING
+    description: "Excessive qualifications and caution in informal contexts — academic register in casual platforms."
+    detection_difficulty: LOW
+    false_positive_risk: MEDIUM
+    keywords:
+      - "it's important to note"
+      - "it's worth considering"
+      - "one might argue"
+      - "that said"
+      - "it should be noted that"
+      - "it's crucial to consider"
+    model_association: universal (especially Claude)
+    examples:
+      - "It's important to note that there are multiple perspectives to consider."
+
+  - name: LLM_TEMPLATE_STRUCTURE
+    description: "Numbered lists and bullet points in casual social conversation — unnatural for platform context."
+    detection_difficulty: LOW
+    false_positive_risk: HIGH
+    keywords: []
+    model_association: GPT-4o, Claude
+    detection_signals:
+      - "Numbered list in casual comment (< 200 chars)"
+      - "Bullet points in social media thread"
+      - "Structured sections (Introduction, Body, Conclusion) in what claims to be casual"
+    examples:
+      - "There are 3 key reasons: 1) The economic implications, 2) The social impact, 3) Long-term sustainability"
+
+  - name: LLM_BALANCED_FAKEOUT
+    description: "Fake 'both sides' framing before pushing one agenda — mimics academic objectivity."
+    detection_difficulty: MEDIUM
+    false_positive_risk: HIGH
+    keywords:
+      - "on one hand"
+      - "while there are valid points on both sides"
+      - "it's true that"
+      - "to be fair"
+      - "there are merits to both"
+    model_association: Claude
+    examples:
+      - "While there are valid points on both sides, it's clear that this project is superior."
+
+  - name: LLM_CONCLUSION_RECAP
+    description: "Summarizing what was just said in a conclusion format — 'In summary', 'To conclude' in casual chat."
+    detection_difficulty: LOW
+    false_positive_risk: MEDIUM
+    keywords:
+      - "in conclusion"
+      - "to summarize"
+      - "in summary"
+      - "to wrap up"
+      - "overall"
+      - "in essence"
+    model_association: universal
+    examples:
+      - "In conclusion, this shows that we need to reconsider our approach."
+
+  - name: LLM_PERSONA_MIMICRY
+    description: "Overly consistent persona/personality without natural human variation or contradiction."
+    detection_difficulty: HIGH
+    false_positive_risk: HIGH
+    keywords: []
+    model_association: universal (fine-tuned)
+    detection_signals:
+      - "Every comment follows same politeness level, vocabulary range, sentence structure"
+      - "No shifts in mood, energy, or style across comments"
+      - "No typos, no slang evolution, no regional variation"
+    examples:
+      - "An account that always uses perfect grammar, identical tone, and complete sentences 100% of the time"
+
+  - name: LLM_HAUNTED_KNOWLEDGE
+    description: "Knowing too much about too many topics — LLMs have comprehensive knowledge where humans specialize."
+    detection_difficulty: MEDIUM
+    false_positive_risk: MEDIUM
+    keywords: []
+    model_association: universal
+    detection_signals:
+      - "Single comment demonstrates expert-level knowledge of 3+ unrelated fields"
+      - "Explaining concepts that typical social media users wouldn't know"
+    examples:
+      - "Using medical terminology, legal citations, and engineering concepts all in one casual comment"
+
+  - name: LLM_STATISTICAL_SMOOTHNESS
+    description: "Perplexity and burstiness analysis — LLM text has consistent statistical properties unlike human writing."
+    detection_difficulty: LOW
+    false_positive_risk: MEDIUM
+    keywords: []
+    model_association: universal
+    detection_signals:
+      - "Low perplexity variance (consistent predictability)"
+      - "Low burstiness (consistent sentence length and complexity)"
+    examples:
+      - "Text where every sentence is ~15 words, medium complexity, no very short or very long sentences"

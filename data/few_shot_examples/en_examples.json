@@ -1,0 +1,338 @@
+{
+  "language": "en",
+  "version": "1.0.0",
+  "description": "English few-shot examples for manipulation detection prompt library",
+  "examples": [
+    {
+      "category": "C",
+      "tactic": "FOMO_PUMP",
+      "text": "🚀🚀 This token is about to EXPLODE! Whales are accumulating RIGHT NOW! Don't be the last one holding fiat when this 10x's by Friday! I turned $500 into $47,000 last month with this exact strategy! DM me for my private group! 🔥🔥",
+      "manipulation_index": 0.93,
+      "confidence": "HIGH",
+      "evidence_spans": [
+        {"tactic": "FOMO_PUMP", "span": "about to EXPLODE", "explanation": "Price prediction + urgency combo"},
+        {"tactic": "SOCIAL_PROOF", "span": "Whales are accumulating", "explanation": "Manufactured authority/consensus"},
+        {"tactic": "URGENCY_SCARCITY", "span": "Don't be the last one", "explanation": "Explicit FOMO trigger"},
+        {"tactic": "SHILL_PATTERN", "span": "DM me for my private group", "explanation": "Referral/commercial intent"},
+        {"tactic": "AUTHORITY_FABRICATION", "span": "I turned $500 into $47,000", "explanation": "Unverified personal testimonial"}
+      ],
+      "is_ai_generated": false,
+      "is_coordinated": false
+    },
+    {
+      "category": "C",
+      "tactic": "FOMO_PUMP",
+      "text": "Bitcoin to $200k by EOY! Institutions are accumulating quietly. Last chance to get in before the pump! 🚀",
+      "manipulation_index": 0.82,
+      "confidence": "HIGH",
+      "evidence_spans": [
+        {"tactic": "FOMO_PUMP", "span": "Bitcoin to $200k by EOY", "explanation": "Specific price target + timeframe"},
+        {"tactic": "SOCIAL_PROOF", "span": "Institutions are accumulating quietly", "explanation": "Unverifiable institutional claim"},
+        {"tactic": "URGENCY_SCARCITY", "span": "Last chance to get in before the pump", "explanation": "Urgency trigger for action"}
+      ],
+      "is_ai_generated": false,
+      "is_coordinated": false
+    },
+    {
+      "category": "C",
+      "tactic": "FUD_DUMP",
+      "text": "SEC is about to announce charges against this project. Insider sources say this. Protect your capital NOW before the announcement drops.",
+      "manipulation_index": 0.88,
+      "confidence": "HIGH",
+      "evidence_spans": [
+        {"tactic": "FUD_DUMP", "span": "SEC is about to announce charges", "explanation": "Fear claim about regulatory action"},
+        {"tactic": "AUTHORITY_FABRICATION", "span": "Insider sources say this", "explanation": "Unverifiable insider source"},
+        {"tactic": "URGENCY_SCARCITY", "span": "Protect your capital NOW", "explanation": "Urgent call to action (sell)"}
+      ],
+      "is_ai_generated": false,
+      "is_coordinated": true
+    },
+    {
+      "category": "A",
+      "tactic": "SOCIAL_PROOF",
+      "text": "Everyone is switching to this platform. 100k people joined just this week. You're missing out if you're still using the old one.",
+      "manipulation_index": 0.78,
+      "confidence": "HIGH",
+      "evidence_spans": [
+        {"tactic": "SOCIAL_PROOF", "span": "Everyone is switching", "explanation": "Manufactured consensus claim"},
+        {"tactic": "SOCIAL_PROOF", "span": "100k people joined", "explanation": "Unverifiable statistic for social proof"},
+        {"tactic": "URGENCY_SCARCITY", "span": "You're missing out", "explanation": "FOMO trigger"}
+      ],
+      "is_ai_generated": false,
+      "is_coordinated": false
+    },
+    {
+      "category": "A",
+      "tactic": "URGENCY_SCARCITY",
+      "text": "⚠️ ONLY 3 HOURS LEFT! The presale ends at midnight. Don't be the one who missed the biggest opportunity of 2026!",
+      "manipulation_index": 0.75,
+      "confidence": "HIGH",
+      "evidence_spans": [
+        {"tactic": "URGENCY_SCARCITY", "span": "ONLY 3 HOURS LEFT", "explanation": "Artificial countdown pressure"},
+        {"tactic": "URGENCY_SCARCITY", "span": "Don't be the one who missed", "explanation": "FOMO-based scarcity trigger"}
+      ],
+      "is_ai_generated": false,
+      "is_coordinated": false
+    },
+    {
+      "category": "E",
+      "tactic": "LLM_HOLLOW_AFFIRMATION",
+      "text": "Absolutely! You've raised such an important point. It's crucial that we consider all perspectives here. There are several key factors to consider: 1) The economic implications, 2) The social impact, 3) The long-term sustainability.",
+      "manipulation_index": 0.71,
+      "confidence": "MEDIUM",
+      "evidence_spans": [
+        {"tactic": "LLM_HOLLOW_AFFIRMATION", "span": "Absolutely! You've raised such an important point", "explanation": "Excessive agreement without substance"},
+        {"tactic": "LLM_TEMPLATE_STRUCTURE", "span": "1) The economic implications, 2)...", "explanation": "Numbered list in casual social context"},
+        {"tactic": "LLM_OVER_HEDGING", "span": "It's crucial that we consider all perspectives", "explanation": "Academic hedging in informal context"}
+      ],
+      "is_ai_generated": true,
+      "is_coordinated": false
+    },
+    {
+      "category": "E",
+      "tactic": "LLM_BALANCED_FAKEOUT",
+      "text": "While there are valid points on both sides of this debate, the evidence strongly suggests that this new token represents a paradigm shift in DeFi. That said, investors should do their own research.",
+      "manipulation_index": 0.68,
+      "confidence": "MEDIUM",
+      "evidence_spans": [
+        {"tactic": "LLM_BALANCED_FAKEOUT", "span": "While there are valid points on both sides", "explanation": "Fake both-sides framing before endorsement"},
+        {"tactic": "LLM_OVER_HEDGING", "span": "That said, investors should do their own research", "explanation": "Ethical caveat characteristic of Claude outputs"}
+      ],
+      "is_ai_generated": true,
+      "is_coordinated": false
+    },
+    {
+      "category": "D",
+      "tactic": "EMOTIONAL_HIJACKING",
+      "text": "This is OUTRAGEOUS! They're literally destroying everything we care about! SHARE THIS before it gets taken down! The truth must come out!",
+      "manipulation_index": 0.82,
+      "confidence": "HIGH",
+      "evidence_spans": [
+        {"tactic": "EMOTIONAL_HIJACKING", "span": "OUTRAGEOUS! They're literally destroying everything", "explanation": "Extreme emotional language to bypass critical thinking"},
+        {"tactic": "URGENCY_SCARCITY", "span": "before it gets taken down", "explanation": "Artificial urgency to drive sharing"},
+        {"tactic": "FALSE_DILEMMA", "span": "The truth must come out", "explanation": "Implied binary — you either share or suppress truth"}
+      ],
+      "is_ai_generated": false,
+      "is_coordinated": false
+    },
+    {
+      "category": "D",
+      "tactic": "FALSE_DILEMMA",
+      "text": "You either support this bill or you want children to suffer. There's no middle ground. Anyone who doesn't sign this petition is complicit.",
+      "manipulation_index": 0.85,
+      "confidence": "HIGH",
+      "evidence_spans": [
+        {"tactic": "FALSE_DILEMMA", "span": "You either support this bill or you want children to suffer", "explanation": "Forced binary with emotional loading"},
+        {"tactic": "FALSE_DILEMMA", "span": "There's no middle ground", "explanation": "Explicit elimination of nuance"},
+        {"tactic": "EMOTIONAL_HIJACKING", "span": "is complicit", "explanation": "Guilt-based emotional manipulation"}
+      ],
+      "is_ai_generated": false,
+      "is_coordinated": false
+    },
+    {
+      "category": "C",
+      "tactic": "SHILL_PATTERN",
+      "text": "Hey, just saw your post about the market dip. I was worried too but then I found this amazing analyst who predicted all 3 recent crashes. His signals are in a private group — I can send you the link if you're interested!",
+      "manipulation_index": 0.69,
+      "confidence": "MEDIUM",
+      "evidence_spans": [
+        {"tactic": "LIKING_FLATTERY", "span": "just saw your post about the market dip", "explanation": "Establishing rapport before pitch"},
+        {"tactic": "SOCIAL_PROOF", "span": "predicted all 3 recent crashes", "explanation": "Unverifiable track record claim"},
+        {"tactic": "SHILL_PATTERN", "span": "private group — I can send you the link", "explanation": "Stealth referral approach"}
+      ],
+      "is_ai_generated": false,
+      "is_coordinated": false
+    },
+    {
+      "category": "A",
+      "tactic": "AUTHORITY_FABRICATION",
+      "text": "According to research from leading experts at top universities, this new protocol will revolutionize the entire industry by 2027. Studies show a 94% improvement over existing solutions.",
+      "manipulation_index": 0.76,
+      "confidence": "MEDIUM",
+      "evidence_spans": [
+        {"tactic": "AUTHORITY_FABRICATION", "span": "research from leading experts at top universities", "explanation": "Vague authority without named sources"},
+        {"tactic": "AUTHORITY_FABRICATION", "span": "94% improvement", "explanation": "Precise-sounding unverifiable statistic"}
+      ],
+      "is_ai_generated": false,
+      "is_coordinated": false
+    },
+    {
+      "category": "E",
+      "tactic": "LLM_TEMPLATE_STRUCTURE",
+      "text": "I'd be happy to help explain why this matters. The key points are: 1. Market efficiency is improved. 2. User experience is significantly better. 3. Security has been audited by multiple firms. I hope this clarifies things!",
+      "manipulation_index": 0.62,
+      "confidence": "MEDIUM",
+      "evidence_spans": [
+        {"tactic": "LLM_HOLLOW_AFFIRMATION", "span": "I'd be happy to help", "explanation": "Claude-characteristic RLHF opener"},
+        {"tactic": "LLM_TEMPLATE_STRUCTURE", "span": "1. Market efficiency... 2. User experience... 3. Security...", "explanation": "Numbered list in casual context"},
+        {"tactic": "LLM_HOLLOW_AFFIRMATION", "span": "I hope this clarifies things", "explanation": "Overly polite closing formula"}
+      ],
+      "is_ai_generated": true,
+      "is_coordinated": false
+    },
+    {
+      "category": "B",
+      "tactic": "ASTROTURFING",
+      "text": "As a regular mom of three, I can honestly say this product changed our lives! My husband, a truck driver, agrees. Even my retired father started using it! Best decision ever!!! 💕",
+      "manipulation_index": 0.65,
+      "confidence": "MEDIUM",
+      "evidence_spans": [
+        {"tactic": "ASTROTURFING", "span": "regular mom of three", "explanation": "Over-emphasized ordinary persona — astroturfing signature"},
+        {"tactic": "SOCIAL_PROOF", "span": "My husband... agrees. Even my retired father started", "explanation": "Stacked testimonials in single comment — forced social proof"}
+      ],
+      "is_ai_generated": true,
+      "is_coordinated": false
+    },
+    {
+      "category": "C",
+      "tactic": "WHALE_NARRATIVE",
+      "text": "Smart money is quietly accumulating this token. On-chain data shows whale wallets adding millions. When they're done buying, this will explode. Don't be left behind.",
+      "manipulation_index": 0.74,
+      "confidence": "MEDIUM",
+      "evidence_spans": [
+        {"tactic": "WHALE_NARRATIVE", "span": "Smart money is quietly accumulating", "explanation": "Unverifiable whale activity claim"},
+        {"tactic": "WHALE_NARRATIVE", "span": "On-chain data shows whale wallets adding", "explanation": "Vague reference to data without link/address"},
+        {"tactic": "FOMO_PUMP", "span": "this will explode. Don't be left behind", "explanation": "Price prediction + FOMO trigger"}
+      ],
+      "is_ai_generated": false,
+      "is_coordinated": false
+    },
+    {
+      "language": "en",
+      "category": null,
+      "tactic": null,
+      "text": "I disagree with this policy because it historically hasn't worked in similar contexts.",
+      "manipulation_index": 0.04,
+      "confidence": "HIGH",
+      "evidence_spans": [],
+      "is_ai_generated": false,
+      "is_coordinated": false
+    },
+    {
+      "language": "en",
+      "category": null,
+      "tactic": null,
+      "text": "Just bought some ETH for the first time. Excited to learn more about the space!",
+      "manipulation_index": 0.08,
+      "confidence": "HIGH",
+      "evidence_spans": [],
+      "is_ai_generated": false,
+      "is_coordinated": false
+    },
+    {
+      "language": "en",
+      "category": null,
+      "tactic": null,
+      "text": "The Fed announcement is tomorrow. Might be volatile, might not. Either way, I'm just holding my positions.",
+      "manipulation_index": 0.06,
+      "confidence": "HIGH",
+      "evidence_spans": [],
+      "is_ai_generated": false,
+      "is_coordinated": false
+    },
+    {
+      "language": "en",
+      "category": null,
+      "tactic": null,
+      "text": "Interesting take, but I think you're overlooking the regulatory timeline. Token unlocks happen in Q3, which could change the supply dynamics significantly.",
+      "manipulation_index": 0.12,
+      "confidence": "HIGH",
+      "evidence_spans": [],
+      "is_ai_generated": false,
+      "is_coordinated": false
+    },
+    {
+      "category": "C",
+      "tactic": "SHILL_PATTERN",
+      "text": "Just found this gem 💎 $BABYKEKWOLF420x — dev is doxxed, liquidity locked for 100 years, CMC listing tomorrow! Easy 100x from here! CA: 0xdead...beef",
+      "manipulation_index": 0.91,
+      "confidence": "HIGH",
+      "evidence_spans": [
+        {"tactic": "SHILL_PATTERN", "span": "$BABYKEKWOLF420x", "explanation": "Low-cap meme token promotion"},
+        {"tactic": "FOMO_PUMP", "span": "Easy 100x from here", "explanation": "Extreme price prediction without basis"},
+        {"tactic": "AUTHORITY_FABRICATION", "span": "dev is doxxed, liquidity locked for 100 years", "explanation": "Unverifiable security claims"}
+      ],
+      "is_ai_generated": false,
+      "is_coordinated": false
+    },
+    {
+      "category": "D",
+      "tactic": "EMOTIONAL_HIJACKING",
+      "text": "WAKE UP PEOPLE!!! The banksters are stealing your future! They printed trillions while you worked for scraps! End the Fed NOW! 🔥",
+      "manipulation_index": 0.86,
+      "confidence": "HIGH",
+      "evidence_spans": [
+        {"tactic": "EMOTIONAL_HIJACKING", "span": "WAKE UP PEOPLE!!!", "explanation": "Extreme emotional opening to bypass analysis"},
+        {"tactic": "EMOTIONAL_HIJACKING", "span": "stealing your future", "explanation": "Fear and outrage emotion targeting"},
+        {"tactic": "FALSE_DILEMMA", "span": "End the Fed NOW", "explanation": "Oversimplified call to action for complex problem"}
+      ],
+      "is_ai_generated": false,
+      "is_coordinated": false
+    },
+    {
+      "category": "A",
+      "tactic": "SOCIAL_PROOF",
+      "text": "The entire crypto community knows this is the next big thing. All the top traders are already in. Don't be the last to join the winning team! 🏆",
+      "manipulation_index": 0.72,
+      "confidence": "HIGH",
+      "evidence_spans": [
+        {"tactic": "SOCIAL_PROOF", "span": "entire crypto community knows", "explanation": "Manufactured consensus claim"},
+        {"tactic": "SOCIAL_PROOF", "span": "All the top traders are already in", "explanation": "Unverifiable authority claim"},
+        {"tactic": "URGENCY_SCARCITY", "span": "Don't be the last to join", "explanation": "Explicit FOMO trigger"}
+      ],
+      "is_ai_generated": false,
+      "is_coordinated": false
+    },
+    {
+      "category": "E",
+      "tactic": "LLM_OVER_HEDGING",
+      "text": "I think it's worth considering that there might be several factors at play here. It's important to note that correlation doesn't necessarily imply causation, and one might argue that the data could be interpreted differently.",
+      "manipulation_index": 0.55,
+      "confidence": "MEDIUM",
+      "evidence_spans": [
+        {"tactic": "LLM_OVER_HEDGING", "span": "it's worth considering", "explanation": "Excessive hedging phrases"},
+        {"tactic": "LLM_OVER_HEDGING", "span": "It's important to note that", "explanation": "Academic register mismatch"},
+        {"tactic": "LLM_OVER_HEDGING", "span": "one might argue", "explanation": "Triple hedging without taking a position"}
+      ],
+      "is_ai_generated": true,
+      "is_coordinated": false
+    },
+    {
+      "category": null,
+      "tactic": null,
+      "text": "lmaooo this aged like milk 💀 rip to everyone who bought at the top",
+      "manipulation_index": 0.15,
+      "confidence": "MEDIUM",
+      "evidence_spans": [],
+      "is_ai_generated": false,
+      "is_coordinated": false
+    },
+    {
+      "category": "C",
+      "tactic": "FOMO_PUMP",
+      "text": "Don't fade this project anon. Dev just burned LP tokens, renounced contract, and CEX listing confirmed for next week. This is literally printing money at these levels 🖨️💵",
+      "manipulation_index": 0.79,
+      "confidence": "HIGH",
+      "evidence_spans": [
+        {"tactic": "FOMO_PUMP", "span": "CEX listing confirmed for next week", "explanation": "Unverified listing claim + timeframe"},
+        {"tactic": "FOMO_PUMP", "span": "literally printing money at these levels", "explanation": "Guaranteed profit implication"}
+      ],
+      "is_ai_generated": false,
+      "is_coordinated": false
+    },
+    {
+      "category": "B",
+      "tactic": "NARRATIVE_FLOODING",
+      "text": "This coin is going to 100x! Same dev made the last project that did 50x. All the signals are there — buy now before it pumps!",
+      "manipulation_index": 0.70,
+      "confidence": "MEDIUM",
+      "evidence_spans": [
+        {"tactic": "FOMO_PUMP", "span": "going to 100x", "explanation": "Extreme price prediction"},
+        {"tactic": "SOCIAL_PROOF", "span": "Same dev made the last project that did 50x", "explanation": "Unverified track record claim"},
+        {"tactic": "URGENCY_SCARCITY", "span": "buy now before it pumps", "explanation": "Urgent call to action"}
+      ],
+      "is_ai_generated": false,
+      "is_coordinated": true
+    }
+  ]
+}

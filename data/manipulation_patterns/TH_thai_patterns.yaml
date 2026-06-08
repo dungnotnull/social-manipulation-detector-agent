@@ -1,0 +1,47 @@
+version: "1.0.0"
+category: "TH"
+category_name: "Thai Language-Specific Patterns"
+language: "th"
+last_updated: "2026-06-08"
+patterns:
+  - name: TH_FOMO_PHRASES
+    type: keyword_list
+    description: "Common Thai FOMO manipulation phrases"
+    phrases:
+      - "อย่าพลาดโอกาส"
+      - "โอกาสทอง"
+      - "เหลือไม่กี่ที่แล้ว"
+      - "กำลังจะพุ่ง"
+      - "เข้าตอนนี้ก่อนสาย"
+      - "วาฬกำลังซื้อ"
+      - "กำไร 10 เท่ารออยู่"
+      - "ห้ามพลาด"
+
+  - name: TH_FUD_PHRASES
+    type: keyword_list
+    description: "Common Thai FUD manipulation phrases"
+    phrases:
+      - "จะพังแล้ว"
+      - "ขายก่อนสาย"
+      - "ทีมงานถอนตัวแล้ว"
+      - "ปกป้องเงินลงทุน"
+      - "รีบออกมาก่อน"
+      - "โปรเจคนี้หลอกลวง"
+
+  - name: TH_SHILL_PATTERNS
+    type: pattern_list
+    description: "Common Thai shill patterns"
+    patterns:
+      - "เข้ากลุ่ม VIP" — VIP group recruitment
+      - "ทักมาขอลิงค์" — Link sharing via DM
+      - "กำไรแล้ว x{number} เท่า" — Unverifiable profit claim
+      - "รับประกันกำไร" — Guaranteed returns (impossible)
+
+  - name: TH_BOT_INDICATORS
+    type: signal_list
+    description: "Signals that a Thai-language comment may be bot-generated"
+    signals:
+      - "No Thai particles (คะ, ครับ, จ้า, คับ) that indicate natural speech"
+      - "Perfect spelling without common typing shortcuts"
+      - "No code-switching with English (real Thai social media mixes heavily)"
+      - "Formal register mismatch for claimed age or context"

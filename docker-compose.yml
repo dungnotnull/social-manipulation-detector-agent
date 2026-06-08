@@ -1,0 +1,145 @@
+version: "3.8"
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: docker/api.Dockerfile
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    environment:
+      - REDIS_URL=redis://redis:6379/0
+      - POSTGRES_URL=postgresql+asyncpg://postgres:postgres@postgres:5432/smda
+      - NEO4J_URL=bolt://neo4j:7687
+      - CELERY_BROKER_URL=redis://redis:6379/1
+      - CELERY_RESULT_BACKEND=redis://redis:6379/2
+    volumes:
+      - ./src:/app/src
+      - ./prompts:/app/prompts
+      - ./data:/app/data
+      - hf_cache:/app/data/models
+    depends_on:
+      redis:
+        condition: service_healthy
+      postgres:
+        condition: service_healthy
+      neo4j:
+        condition: service_healthy
+    restart: unless-stopped
+
+  worker:
+    build:
+      context: .
+      dockerfile: docker/worker.Dockerfile
+    env_file:
+      - .env
+    environment:
+      - REDIS_URL=redis://redis:6379/0
+      - POSTGRES_URL=postgresql+asyncpg://postgres:postgres@postgres:5432/smda
+      - NEO4J_URL=bolt://neo4j:7687
+      - CELERY_BROKER_URL=redis://redis:6379/1
+      - CELERY_RESULT_BACKEND=redis://redis:6379/2
+    volumes:
+      - ./src:/app/src
+      - ./prompts:/app/prompts
+      - ./data:/app/data
+      - hf_cache:/app/data/models
+    depends_on:
+      redis:
+        condition: service_healthy
+      postgres:
+        condition: service_healthy
+      neo4j:
+        condition: service_healthy
+    restart: unless-stopped
+    deploy:
+      replicas: 2
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+    restart: unless-stopped
+
+  postgres:
+    image: postgres:16-alpine
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: smda
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./docker/init-db.sql:/docker-entrypoint-initdb.d/init.sql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d smda"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+    restart: unless-stopped
+
+  neo4j:
+    image: neo4j:5-community
+    ports:
+      - "7474:7474"
+      - "7687:7687"
+    environment:
+      NEO4J_AUTH: neo4j/password
+      NEO4J_dbms_memory_heap_max__size: 512m
+    volumes:
+      - neo4j_data:/data
+      - neo4j_logs:/logs
+    healthcheck:
+      test: ["CMD", "cypher-shell", "-u", "neo4j", "-p", "password", "RETURN 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+
+  prometheus:
+    image: prom/prometheus:latest
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./docker/prometheus.yml:/etc/prometheus/prometheus.yml
+      - prometheus_data:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--web.console.libraries=/etc/prometheus/console_libraries'
+      - '--web.console.templates=/etc/prometheus/consoles'
+    restart: unless-stopped
+
+  grafana:
+    image: grafana/grafana:latest
+    ports:
+      - "3000:3000"
+    environment:
+      - GF_SECURITY_ADMIN_USER=admin
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ./docker/grafana-datasources.yml:/etc/grafana/provisioning/datasources/datasources.yml
+      - ./docker/grafana-dashboards.yml:/etc/grafana/provisioning/dashboards/dashboards.yml
+    depends_on:
+      - prometheus
+    restart: unless-stopped
+
+volumes:
+  redis_data:
+  postgres_data:
+  neo4j_data:
+  neo4j_logs:
+  hf_cache:
+  prometheus_data:
+  grafana_data:

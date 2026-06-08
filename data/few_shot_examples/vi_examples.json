@@ -1,0 +1,199 @@
+{
+  "language": "vi",
+  "version": "1.0.0",
+  "description": "Vietnamese few-shot examples for manipulation detection prompt library",
+  "examples": [
+    {
+      "category": "C",
+      "tactic": "FOMO_PUMP",
+      "text": "🚀🚀 Coin này sắp bay rồi anh em ơi! Cá voi đang gom hàng âm thầm! Đừng bỏ lỡ cơ hội vàng này, x10 là chuyện nhỏ!",
+      "manipulation_index": 0.93,
+      "confidence": "HIGH",
+      "evidence_spans": [
+        {"tactic": "FOMO_PUMP", "span": "sắp bay rồi", "explanation": "Dự đoán giá kết hợp khẩn cấp"},
+        {"tactic": "SOCIAL_PROOF", "span": "Cá voi đang gom hàng", "explanation": "Tạo sự đồng thuận giả"},
+        {"tactic": "URGENCY_SCARCITY", "span": "Đừng bỏ lỡ cơ hội vàng", "explanation": "Kích hoạt FOMO rõ ràng"}
+      ],
+      "is_ai_generated": false,
+      "is_coordinated": false
+    },
+    {
+      "category": "C",
+      "tactic": "FOMO_PUMP",
+      "text": "Bitcoin sẽ đạt $200k vào cuối năm! Tổ chức đang âm thầm tích lũy. Cơ hội cuối cùng để lên tàu trước khi pump mạnh! 🚀",
+      "manipulation_index": 0.82,
+      "confidence": "HIGH",
+      "evidence_spans": [
+        {"tactic": "FOMO_PUMP", "span": "Bitcoin sẽ đạt $200k vào cuối năm", "explanation": "Mục tiêu giá cụ thể + khung thời gian"},
+        {"tactic": "SOCIAL_PROOF", "span": "Tổ chức đang âm thầm tích lũy", "explanation": "Tuyên bố không xác minh về tổ chức"},
+        {"tactic": "URGENCY_SCARCITY", "span": "Cơ hội cuối cùng để lên tàu", "explanation": "Tạo áp lực khẩn cấp"}
+      ],
+      "is_ai_generated": false,
+      "is_coordinated": false
+    },
+    {
+      "category": "C",
+      "tactic": "FUD_DUMP",
+      "text": "Dự án này sắp bị SEC điều tra rồi. Nguồn tin nội bộ nói vậy. Bảo vệ vốn ngay trước khi quá muộn!",
+      "manipulation_index": 0.88,
+      "confidence": "HIGH",
+      "evidence_spans": [
+        {"tactic": "FUD_DUMP", "span": "sắp bị SEC điều tra", "explanation": "Tuyên bố sợ hãi về hành động quản lý"},
+        {"tactic": "AUTHORITY_FABRICATION", "span": "Nguồn tin nội bộ nói vậy", "explanation": "Nguồn tin không xác minh"},
+        {"tactic": "URGENCY_SCARCITY", "span": "Bảo vệ vốn ngay", "explanation": "Kêu gọi hành động khẩn cấp"}
+      ],
+      "is_ai_generated": false,
+      "is_coordinated": true
+    },
+    {
+      "category": "A",
+      "tactic": "SOCIAL_PROOF",
+      "text": "Ai cũng đang chuyển sang nền tảng này rồi. 100k người tham gia chỉ trong tuần này. Bạn đang bỏ lỡ cơ hội đấy!",
+      "manipulation_index": 0.78,
+      "confidence": "HIGH",
+      "evidence_spans": [
+        {"tactic": "SOCIAL_PROOF", "span": "Ai cũng đang chuyển sang", "explanation": "Tuyên bố đồng thuận giả"},
+        {"tactic": "SOCIAL_PROOF", "span": "100k người tham gia", "explanation": "Thống kê không xác minh"},
+        {"tactic": "URGENCY_SCARCITY", "span": "Bạn đang bỏ lỡ cơ hội", "explanation": "Kích hoạt FOMO"}
+      ],
+      "is_ai_generated": false,
+      "is_coordinated": false
+    },
+    {
+      "category": "A",
+      "tactic": "URGENCY_SCARCITY",
+      "text": "⚠️ CHỈ CÒN 3 GIỜ! Presale đóng cửa lúc nửa đêm. Đừng là người bỏ lỡ cơ hội lớn nhất năm 2026!",
+      "manipulation_index": 0.75,
+      "confidence": "HIGH",
+      "evidence_spans": [
+        {"tactic": "URGENCY_SCARCITY", "span": "CHỈ CÒN 3 GIỜ", "explanation": "Áp lực đếm ngược giả tạo"},
+        {"tactic": "URGENCY_SCARCITY", "span": "Đừng là người bỏ lỡ", "explanation": "Kích hoạt FOMO dựa trên khan hiếm"}
+      ],
+      "is_ai_generated": false,
+      "is_coordinated": false
+    },
+    {
+      "category": "C",
+      "tactic": "SHILL_PATTERN",
+      "text": "Mình vừa x5 tài khoản nhờ coin này! Anh em muốn vào nhóm VIP không? Inbox mình gửi link, đảm bảo uy tín 100%!",
+      "manipulation_index": 0.85,
+      "confidence": "HIGH",
+      "evidence_spans": [
+        {"tactic": "SHILL_PATTERN", "span": "vào nhóm VIP", "explanation": "Mời vào nhóm riêng sau lời hứa lợi nhuận"},
+        {"tactic": "AUTHORITY_FABRICATION", "span": "Mình vừa x5 tài khoản", "explanation": "Lời chứng không xác minh"},
+        {"tactic": "AUTHORITY_FABRICATION", "span": "đảm bảo uy tín 100%", "explanation": "Cam kết không thể xác minh"}
+      ],
+      "is_ai_generated": false,
+      "is_coordinated": false
+    },
+    {
+      "category": "D",
+      "tactic": "EMOTIONAL_HIJACKING",
+      "text": "KHÔNG THỂ TIN ĐƯỢC! Họ đang phá hủy mọi thứ chúng ta quan tâm! CHIA SẺ NGAY trước khi bị gỡ xuống! Sự thật phải được phơi bày!",
+      "manipulation_index": 0.82,
+      "confidence": "HIGH",
+      "evidence_spans": [
+        {"tactic": "EMOTIONAL_HIJACKING", "span": "KHÔNG THỂ TIN ĐƯỢC! Họ đang phá hủy mọi thứ", "explanation": "Ngôn ngữ cảm xúc cực đoan"},
+        {"tactic": "URGENCY_SCARCITY", "span": "trước khi bị gỡ xuống", "explanation": "Khẩn cấp giả để thúc đẩy chia sẻ"},
+        {"tactic": "FALSE_DILEMMA", "span": "Sự thật phải được phơi bày", "explanation": "Nhị phân ngầm — bạn hoặc chia sẻ hoặc che giấu sự thật"}
+      ],
+      "is_ai_generated": false,
+      "is_coordinated": false
+    },
+    {
+      "category": "C",
+      "tactic": "WHALE_NARRATIVE",
+      "text": "Cá voi đang gom hàng âm thầm, ví lớn mua thêm hàng triệu đô. Khi họ mua xong là coin này bay luôn! Đừng để bị bỏ lại phía sau!",
+      "manipulation_index": 0.74,
+      "confidence": "MEDIUM",
+      "evidence_spans": [
+        {"tactic": "WHALE_NARRATIVE", "span": "Cá voi đang gom hàng âm thầm", "explanation": "Tuyên bố không xác minh về hoạt động cá voi"},
+        {"tactic": "WHALE_NARRATIVE", "span": "ví lớn mua thêm hàng triệu đô", "explanation": "Không có dữ liệu on-chain"},
+        {"tactic": "FOMO_PUMP", "span": "bay luôn! Đừng để bị bỏ lại", "explanation": "Dự đoán giá + kích hoạt FOMO"}
+      ],
+      "is_ai_generated": false,
+      "is_coordinated": false
+    },
+    {
+      "category": null,
+      "tactic": null,
+      "text": "Mình mới mua một ít ETH lần đầu. Hào hứng tìm hiểu thêm về không gian này quá!",
+      "manipulation_index": 0.08,
+      "confidence": "HIGH",
+      "evidence_spans": [],
+      "is_ai_generated": false,
+      "is_coordinated": false
+    },
+    {
+      "category": null,
+      "tactic": null,
+      "text": "Thông báo của Fed ngày mai có thể làm thị trường biến động. Mình vẫn giữ vị thế hiện tại, không mua thêm cũng không bán.",
+      "manipulation_index": 0.06,
+      "confidence": "HIGH",
+      "evidence_spans": [],
+      "is_ai_generated": false,
+      "is_coordinated": false
+    },
+    {
+      "category": null,
+      "tactic": null,
+      "text": "Mình không đồng ý với chính sách này vì lịch sử cho thấy nó không hiệu quả trong các bối cảnh tương tự.",
+      "manipulation_index": 0.04,
+      "confidence": "HIGH",
+      "evidence_spans": [],
+      "is_ai_generated": false,
+      "is_coordinated": false
+    },
+    {
+      "category": "A",
+      "tactic": "SOCIAL_PROOF",
+      "text": "Cả cộng đồng crypto đều biết đây là dự án tiềm năng nhất! Tất cả trader hàng đầu đã vào rồi. Đừng là người cuối cùng lên tàu nhé! 🏆",
+      "manipulation_index": 0.72,
+      "confidence": "HIGH",
+      "evidence_spans": [
+        {"tactic": "SOCIAL_PROOF", "span": "Cả cộng đồng crypto đều biết", "explanation": "Tuyên bố đồng thuận giả"},
+        {"tactic": "SOCIAL_PROOF", "span": "Tất cả trader hàng đầu đã vào", "explanation": "Tuyên bố quyền lực không xác minh"},
+        {"tactic": "URGENCY_SCARCITY", "span": "Đừng là người cuối cùng", "explanation": "Kích hoạt FOMO rõ ràng"}
+      ],
+      "is_ai_generated": false,
+      "is_coordinated": false
+    },
+    {
+      "category": "C",
+      "tactic": "SHILL_PATTERN",
+      "text": "Mới phát hiện gem này 💎 $BABYKEKWOLF — dev đã doxx, thanh khoản khóa 100 năm, sắp list CMC! Dễ x100 từ đây! CA: 0xdead...beef",
+      "manipulation_index": 0.91,
+      "confidence": "HIGH",
+      "evidence_spans": [
+        {"tactic": "SHILL_PATTERN", "span": "$BABYKEKWOLF", "explanation": "Quảng bá token vốn hóa thấp"},
+        {"tactic": "FOMO_PUMP", "span": "Dễ x100 từ đây", "explanation": "Dự đoán giá cực đoan"},
+        {"tactic": "AUTHORITY_FABRICATION", "span": "dev đã doxx, thanh khoản khóa 100 năm", "explanation": "Tuyên bố bảo mật không xác minh"}
+      ],
+      "is_ai_generated": false,
+      "is_coordinated": false
+    },
+    {
+      "category": "C",
+      "tactic": "FOMO_PUMP",
+      "text": "Anh em đừng fade dự án này! Dev mới burn LP token, renounce contract, CEX listing tuần sau. Đây đúng nghĩa là máy in tiền luôn! 🖨️💵",
+      "manipulation_index": 0.79,
+      "confidence": "HIGH",
+      "evidence_spans": [
+        {"tactic": "FOMO_PUMP", "span": "CEX listing tuần sau", "explanation": "Tuyên bố listing không xác minh + khung thời gian"},
+        {"tactic": "FOMO_PUMP", "span": "đúng nghĩa là máy in tiền", "explanation": "Ngụ ý lợi nhuận đảm bảo"}
+      ],
+      "is_ai_generated": false,
+      "is_coordinated": false
+    },
+    {
+      "category": null,
+      "tactic": null,
+      "text": "haizzz coin này đi rồi 💀 rip mấy ông mua đỉnh hôm qua =)))",
+      "manipulation_index": 0.15,
+      "confidence": "MEDIUM",
+      "evidence_spans": [],
+      "is_ai_generated": false,
+      "is_coordinated": false
+    }
+  ]
+}
